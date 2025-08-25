@@ -2,7 +2,7 @@ public class ArrayStack implements Stackable {
   private Object[] data;
   private int pointerTop;
 
-  public ArrayStack(int length) {
+  public ArrayStack() {
     this(10);
   }
 
@@ -11,28 +11,52 @@ public class ArrayStack implements Stackable {
     pointerTop = -1;
   }
 
-  boolean isEmpty() {
+  @Override
+  public boolean isEmpty() {
     return pointerTop == -1;
   }
-  boolean isFull() {
+
+  @Override
+  public boolean isFull() {
     return pointerTop == data.length - 1;
   }
 
-  void pop (Object data) {
-    if (!isEmpty()) {
-      // posso desempilhar
+  @Override
+  public Object pop () {
+    if (isEmpty()) {
+      System.out.println("Empty stack");
+    } else {
+      return data[pointerTop--];
     }
+    return null;
   }
-  void push (Object data) {
+
+  @Override
+  public void push (Object data) {
     if (!isFull()) {
-      // posso empilhar
+      this.data[++pointerTop] = data;
     }
   }
 
-  Object peek () {
-    if (!isEmpty()) {
+  @Override
+  public Object peek () {
+    if (isEmpty()) {
+      System.out.println("Empty stack");
+      return null;
+    } else {
       return data[pointerTop];
     }
-    return null;
+  }
+
+  @Override
+  public String print () {
+    String result = "";
+    for (int i = pointerTop; i >= 0; i--) {
+      result += data[i];
+      if (i != 0) {
+        result += ", ";
+      }
+    }
+    return "[" + result + "]";
   }
 }
