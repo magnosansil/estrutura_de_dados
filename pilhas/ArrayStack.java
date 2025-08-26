@@ -1,3 +1,5 @@
+package pilhas;
+
 public class ArrayStack implements Stackable {
   private Object[] data;
   private int pointerTop;

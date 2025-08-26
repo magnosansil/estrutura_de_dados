@@ -1,3 +1,5 @@
+package pilhas;
+
 public interface Stackable {
     Object pop();
     void push(Object data);
