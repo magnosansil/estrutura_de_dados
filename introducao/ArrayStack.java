@@ -22,7 +22,7 @@ public class ArrayStack implements Stackable {
   }
 
   @Override
-  public Object pop () {
+  public Object pop() {
     if (isEmpty()) {
       System.out.println("Empty stack");
     } else {
@@ -32,14 +32,14 @@ public class ArrayStack implements Stackable {
   }
 
   @Override
-  public void push (Object data) {
+  public void push(Object data) {
     if (!isFull()) {
       this.data[++pointerTop] = data;
     }
   }
 
   @Override
-  public Object peek () {
+  public Object peek() {
     if (isEmpty()) {
       System.out.println("Empty stack");
       return null;
@@ -49,7 +49,7 @@ public class ArrayStack implements Stackable {
   }
 
   @Override
-  public String print () {
+  public String print() {
     String result = "";
     for (int i = pointerTop; i >= 0; i--) {
       result += data[i];
