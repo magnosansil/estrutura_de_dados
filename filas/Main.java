@@ -18,6 +18,7 @@ public class Main {
         queue.enqueue("E");
         System.out.println("Final queue: " + queue.print());
 
+        // CircleQueue example
         CircleQueue circleQueue = new CircleQueue(5);
         circleQueue.enqueue("A");
         circleQueue.enqueue("B");
@@ -32,5 +33,22 @@ public class Main {
         circleQueue.enqueue("D");
         circleQueue.enqueue("E");
         System.out.println("Final CircleQueue: " + circleQueue.print());
+
+        // DEQueue example
+        DEQueue deq = new DEQueue(5);
+        deq.beginEnqueue("A");
+        deq.beginEnqueue("B");
+        deq.endEnqueue("1");
+        deq.endEnqueue("2");
+
+        System.out.println("DEQueue front to rear: " + deq.printFrontToRear());
+        System.out.println("DEQueue rear to front: " + deq.printRearToFront());
+        System.out.println("Front element: " + deq.front());
+        System.out.println("Rear element: " + deq.rear());
+
+        System.out.println("Removed from front: " + deq.beginDequeue());
+        System.out.println("Removed from rear: " + deq.endDequeue());
+        System.out.println("DEQueue after removals (front to rear): " + deq.printFrontToRear());
+        System.out.println("DEQueue after removals (rear to front): " + deq.printRearToFront());
     }
 }
