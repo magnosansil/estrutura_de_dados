@@ -1,3 +1,5 @@
+package pilhas_encadeadas;
+
 public interface Stackable<T> {
     void push(T data);     
     T peek();              

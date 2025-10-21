@@ -1,4 +1,8 @@
+package pilhas_encadeadas;
+
 import java.util.NoSuchElementException;
+
+import filas_encadeadas.DoubleNode;
 
 public class LinkedStack<T> implements Stackable<T> {
 	private DoubleNode<T> topPointer;

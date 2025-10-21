@@ -1,8 +1,8 @@
+package filas_encadeadas;
+
 public class DoubleNode<T> {
 	private T data;
-	
 	private DoubleNode<T> previous;
-	
 	private DoubleNode<T> next;
 
 	public T getData() {
