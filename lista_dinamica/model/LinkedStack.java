@@ -1,11 +1,9 @@
-package pilhas_encadeadas;
-
 import java.util.NoSuchElementException;
 
 import filas_encadeadas.DoubleNode;
 
 public class LinkedStack<T> implements Stackable<T> {
-	private DoubleNode<T> topPointer;
+  private DoubleNode<T> topPointer;
   private int amount;
   private int length;
 
@@ -18,7 +16,7 @@ public class LinkedStack<T> implements Stackable<T> {
     amount = 0;
     this.length = length;
   }
-  
+
   @Override
   public void push(T data) {
     if (isFull()) {
@@ -31,7 +29,7 @@ public class LinkedStack<T> implements Stackable<T> {
       topPointer.setNext(tempNode);
     }
     topPointer = tempNode;
-    amount++;	
+    amount++;
   }
 
   @Override
@@ -56,35 +54,35 @@ public class LinkedStack<T> implements Stackable<T> {
     return topPointer.getData();
   }
 
-	@Override
-	public void update(T newData) {
-		if (isEmpty()) {
-			throw new NoSuchElementException("Pilha Vazia!");
-		}
-		topPointer.setData(newData);
-	}
+  @Override
+  public void update(T newData) {
+    if (isEmpty()) {
+      throw new NoSuchElementException("Pilha Vazia!");
+    }
+    topPointer.setData(newData);
+  }
 
-	@Override
-	public boolean isFull() {
-		return (amount == length);
-	}
+  @Override
+  public boolean isFull() {
+    return (amount == length);
+  }
 
-	@Override
-	public boolean isEmpty() {
-		return (amount == 0);
-	}
+  @Override
+  public boolean isEmpty() {
+    return (amount == 0);
+  }
 
-	@Override
-	public String toString() {
-		String result = "";
-		DoubleNode<T> auxPointer = topPointer;
-		for (int i = 0; i < amount; i++) {
-			result += auxPointer.getData();
-			if (i != amount - 1) {
-				result += ",";
-			}
-			auxPointer = auxPointer.getPrevious();
-		}
-		return "[" + result + "]";
-	}
+  @Override
+  public String toString() {
+    String result = "";
+    DoubleNode<T> auxPointer = topPointer;
+    for (int i = 0; i < amount; i++) {
+      result += auxPointer.getData();
+      if (i != amount - 1) {
+        result += ",";
+      }
+      auxPointer = auxPointer.getPrevious();
+    }
+    return "[" + result + "]";
+  }
 }
